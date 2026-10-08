@@ -1,5 +1,5 @@
 import React, { useState, createContext, useContext, useMemo } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route, Navigate, useNavigate, useLocation } from 'react-router-dom';
 import {
   BookOpen, User, LogOut, FileText, Upload, Trash2, Library, BookMarked,
   Search, LayoutDashboard, GraduationCap, Code, Database, Palette,
@@ -542,7 +542,7 @@ const ProtectedRoute = ({ children }) => {
 const App = () => {
   return (
     <AuthProvider>
-      <Router basename={import.meta.env.BASE_URL}>
+      <Router>
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route
